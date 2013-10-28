@@ -17,6 +17,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.css" />
+    <Content Include="Scripts\typings\jquery\jquery.d.ts" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\angular-bootstrap-prettify.js" />
     <Content Include="Scripts\angular-bootstrap-prettify.min.js" />
@@ -346,7 +347,6 @@
     <Content Include="Scripts\typings\angularjs\angular-scenario-1.0.d.ts" />
     <Content Include="Scripts\typings\angularjs\angular-scenario.d.ts" />
     <Content Include="Scripts\typings\angularjs\angular.d.ts" />
-    <Content Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Util.ts" />
     <TypeScriptCompile Include="store\TlvStore.ts" />
     <Content Include="packages.config" />
