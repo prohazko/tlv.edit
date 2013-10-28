@@ -56,4 +56,4 @@ _ReSharper*/
 *.min.js
 *.js
 *.js.map
-!lib/*.js
+Scripts/*.js

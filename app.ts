@@ -1,6 +1,6 @@
 /// <reference path="directives/DragAndDrop.ts" />
 
-/// <reference path="typings/all.d.ts" />
+/// <reference path="all.d.ts" />
 /// <reference path="controller/EditorController.ts" />
 
 

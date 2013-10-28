@@ -1,5 +1,5 @@
+/// <reference path="../all.d.ts" />
 /// <reference path="../store/TlvStore.ts" />
-/// <reference path="../typings/all.d.ts" />
 
 module tlv.controllers {
 
