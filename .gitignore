@@ -56,4 +56,7 @@ _ReSharper*/
 *.min.js
 *.js
 *.js.map
-Scripts/*.js
+Scripts/*
+
+#nuget
+packages/
