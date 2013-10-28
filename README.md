@@ -1,4 +1,5 @@
 tlv.edit
 ========
 
-Whery basic TLV editor writen in Typescript
+Very basic TLV editor written in Typescript and Angular.js.
+It doesn't support (now) any existing structure parsing or tag recognition

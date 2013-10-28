@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" ng-app="tlv">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="app.css" type="text/css" />
+    <script src="lib/jquery.js"></script>
+	<script src="lib/angular.js"></script>
+    <script src="prohazko.tlv.js"></script>
+</head>
+<body>
+
+
+<script type="text/ng-template"  id="editor-field.html">
+	{{$index + 1 }}
+	<label drag="field" >tag:</label> <input ng-model="field.tag.model" ng-change="updateLength()" size="5" tabindex="{{level*100+$index}}" />
+	<label>len: <input ng-model="field.length.displayString" size="5" disabled="disabled"/></label>
+	<label>val: <input ng-model="field.value.model" ng-change="updateLength()" tabindex="{{level*1000+$index}}" size="10"/></label>
+	
+	<button  ng-click="removeField(node, field)">[x]</button>
+</script>
+
+<script type="text/ng-template"  id="editor-node.html" >
+	
+    <label drag="node">tag:</label> <input ng-model="node.tag.model" size="5" ng-change="updateLength()" tabindex="{{level*10+$index}}" />
+	
+	<label>len: <input ng-model="node.length.displayString" size="5" disabled="disabled"/></label>
+	<button  ng-click="removeChild($parent.$parent.node, node)" class="btn-removeChild">[x]</button>	
+
+	
+    <button  ng-click="addFieldTo(node)">Add field</button>
+	<button  ng-click="addChildTo(node)">Add child</button>
+	 
+
+	 <ul>
+        <li drop="field" parentnode="{{$parent.$parent.node.$$hashKey}}" whendrop="swapFields" ng-repeat="field in node.fields" ng-include="'editor-field.html'"></li>
+    </ul>
+	 
+    <ul ng-init="level = level + 1">
+        <li drop="node" parentnode="{{$parent.$parent.node.$$hashKey}}" whendrop="log"  ng-repeat="node in node.children" ng-include="'editor-node.html'"></li>
+    </ul>
+</script>
+
+
+    <div ng-controller="EditorCtrl" class="tlv-app" ng-init="level = 0">
+        {{rootEntry.toString()}}
+
+
+		<div class="tlv-tree">
+			<ul>
+				<li class="node-root" ng-repeat="node in root" ng-include="'editor-node.html'"></li>
+			</ul>
+		</div>
+		
+		<div class="tlv-output">
+			{{output}}
+		<div>
+		
+    </div>
+</body>
+</html>
