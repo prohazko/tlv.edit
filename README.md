@@ -11,7 +11,7 @@ Dependencies
 * Angular.js
 * Typescipt typings
 
-Type following in VS Package Manager Console for install:
+Paste following in VS Package Manager Console to install dependencies:
 
 `([xml](cat packages.config)).packages.package | %{  Install-Package -id $_.id; Update-Package -reinstall -id $_.id }`
 

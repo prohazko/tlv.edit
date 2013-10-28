@@ -1,3 +1,4 @@
+/// <reference path="Tlv.ts" />
 /// <reference path="Bytestring.ts" />
 
 module tlv {
